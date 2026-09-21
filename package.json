@@ -1,0 +1,16 @@
+{
+  "name": "webp-converter",
+  "version": "1.0.0",
+  "description": "Converts images (jpg, jpeg, png, bmp, gif, tiff) placed in /src to webp format in /dist, preserving folder structure.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp build",
+    "do": "gulp do"
+  },
+  "author": "kkorolevdev",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-webp": "^4.0.1"
+  }
+}
