@@ -7,22 +7,21 @@ const { Transform } = require('stream');
 const SRC_DIR = './src';
 const DIST_DIR = './dist';
 
-const IMAGE_GLOBS = [
-  './src/**/*.jpg',
-  './src/**/*.jpeg',
-  './src/**/*.png',
-  './src/**/*.bmp',
-  './src/**/*.gif',
-  './src/**/*.tiff',
-  './src/**/*.tif',
-  './src/**/*.JPG',
-  './src/**/*.JPEG',
-  './src/**/*.PNG',
-  './src/**/*.BMP',
-  './src/**/*.GIF',
-  './src/**/*.TIFF',
-  './src/**/*.TIF',
+const IMAGE_FORMATS = [
+  'jpg',
+  'jpeg',
+  'png',
+  'bmp',
+  'gif',
+  'tiff',
+  'tif',
 ];
+
+const IMAGE_GLOBS = IMAGE_FORMATS.reduce((globs, format) => {
+  globs.push(`./src/**/*.${format}`);
+  globs.push(`./src/**/*.${format.toUpperCase()}`);
+  return globs;
+}, []);
 
 // Source paths picked up by the most recent 'build' run, consumed by 'clean:src'.
 let processedFiles = [];

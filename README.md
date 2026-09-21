@@ -23,19 +23,37 @@ npm run do
 # or: npx gulp do
 ```
 
-Only the files that were actually converted are removed. Unsupported file types are
+Only the files that were actually processed are removed. Unsupported file types are
 left untouched, and subdirectories under `src/` are removed only if converting emptied
 them completely. The `src/` folder itself is always kept.
 
 ## Supported formats
 
-`jpg`, `jpeg`, `png`, `bmp`, `gif`, `tiff`, `tif` (case-insensitive)
+The following image formats are supported:
+
+`jpg`, `jpeg`, `png`, `bmp`, `gif`, `tiff`, `tif`
+
+Both lowercase and uppercase file extensions are supported.
+
+To add or remove supported formats, edit the `IMAGE_FORMATS` array in `gulpfile.js`:
+
+```js
+const IMAGE_FORMATS = [
+  'jpg',
+  'jpeg',
+  'png',
+  'bmp',
+  'gif',
+  'tiff',
+  'tif',
+];
+```
 
 All other file types are ignored.
 
 ## Example
 
-```
+```text
 src/
   photo.jpg
   products/
